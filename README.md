@@ -8,6 +8,11 @@ Fuzzy Ninject Warrior is a web-based adventure game built using the ASP.NET MVC 
 
 This project is designed as an educational resource to **demonstrate how to implement Ninject-based dependency injection in an MVC application**. It features best practices of code organization, separation of concerns, and extensibility in a real-world game scenario.
 
+This project illustrates:
+- **Ninject** usage for dependency injection in ASP.NET MVC.
+- Clean separation of concerns using Models, Views, Controllers, Services, Repositories, and API integrations.
+- Lightweight, free database integration with **SQLite**.
+
 ---
 
 ## 🗂️ Project Structure
@@ -98,6 +103,8 @@ NinjectWarriorAdventure/
 - **Start**: Visit the main game page.
 - **Attack**: Choose an enemy and attack using your equipped weapon.
 - **Progress**: Defeat enemies to gain experience and develop your character.
+- View the results and event logs.
+- (Extend the game for more actions: loot, level up, etc.)
 
 ---
 
@@ -106,6 +113,17 @@ NinjectWarriorAdventure/
 - **SQLite** is used for simplicity and portability.
 - All data files are in the `App_Data` directory.
 - If you want to reset the game data, simply delete the `.sqlite` file (it will be recreated at startup).
+- The database file is located at `App_Data/NinjectWarriorAdventure.sqlite`.
+- Connection string is configured in `Web.config`.
+- The initial schema includes tables for `Players`, `Enemies`, and optionally `Weapons`.
+
+#### Example Connection String
+
+```xml
+<connectionStrings>
+  <add name="DefaultConnection" connectionString="Data Source=|DataDirectory|NinjectWarriorAdventure.sqlite;Version=3;" providerName="System.Data.SQLite" />
+</connectionStrings>
+```
 
 ---
 
@@ -117,6 +135,12 @@ NinjectWarriorAdventure/
 - **User Interface:** Simple, responsive web UI with clear feedback and action prompts.
 - **External API Integration:** Game events (like attacks and victories) are logged via a simulated API client.
 - **Extensible Architecture:** Easily add new features, weapons, enemies, or services due to the modular MVC and DI structure.
+- **Attack enemies**: Warriors can attack enemies with various weapons.
+- **Character management**: Players are loaded from the database.
+- **External logging**: Game events are sent to a mock API logger (can be extended).
+- **Simple UI**: Basic Razor views for interaction.
+- **SQLite Database**: Lightweight, easy to set up, and portable.
+- **Clear Code**: Well-commented with separation of concerns.
 
 ---
 
@@ -125,6 +149,15 @@ NinjectWarriorAdventure/
 - The project is organized by MVC best practices.
 - Each class and method is commented for clarity.
 - Interfaces abstract all business logic, data access, and external communications.
+
+---
+
+## 📦 Extending the Project
+
+- Add new weapons by creating new classes implementing `IWeapon`.
+- Expand player/enemy attributes for more RPG elements.
+- Integrate real external APIs for logging or stats.
+- Add authentication, inventory, and more.
 
 ---
 
