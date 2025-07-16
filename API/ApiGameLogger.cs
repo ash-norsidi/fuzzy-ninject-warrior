@@ -4,10 +4,11 @@ namespace FuzzyNinjectWarrior.ApiClients
 {
     public class ApiGameLogger : IGameLogger
     {
-        // Stub: Just write to debug output. Replace with real HTTP call if needed.
         public void LogEvent(string message)
         {
-            Debug.WriteLine("Game Event: " + message);
+            // For demonstration: log to Debug output.
+            Debug.WriteLine($"[GameLog] {message}");
+            // Here, you could call an external API or service.
         }
     }
 }
