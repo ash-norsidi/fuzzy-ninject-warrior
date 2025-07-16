@@ -27,6 +27,7 @@ namespace FuzzyNinjectWarrior.Controllers
             return View();
         }
 
+        // POST: /Adventure/Attack
         [HttpPost]
         public ActionResult Attack(int enemyId, WeaponType weapon)
         {
