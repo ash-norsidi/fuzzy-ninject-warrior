@@ -1,39 +1,31 @@
-using FuzzyNinjectWarrior.Models;
-using FuzzyNinjectWarrior.Repositories;
-using FuzzyNinjectWarrior.Services;
-using System.Linq;
 using System.Web.Mvc;
+using FuzzyNinjectWarrior.Services;
+using FuzzyNinjectWarrior.Models;
 
 namespace FuzzyNinjectWarrior.Controllers
 {
     public class AdventureController : Controller
     {
         private readonly IAdventureService _adventureService;
-        private readonly IPlayerRepository _playerRepo;
 
-        public AdventureController(IAdventureService adventureService, IPlayerRepository playerRepo)
+        public AdventureController(IAdventureService adventureService)
         {
             _adventureService = adventureService;
-            _playerRepo = playerRepo;
         }
 
         // GET: /Adventure/
         public ActionResult Index()
         {
-            var player = _playerRepo.GetPlayerById(1); // Demo: single player
-            var enemies = _playerRepo.GetAllEnemies().ToList();
-            ViewBag.Player = player;
-            ViewBag.Enemies = enemies;
-            return View();
+            var player = _adventureService.GetCurrentPlayer();
+            return View(player);
         }
 
         // POST: /Adventure/Attack
         [HttpPost]
-        public ActionResult Attack(int enemyId, WeaponType weapon)
+        public ActionResult Attack(string enemyName, int weaponType)
         {
-            var result = _adventureService.Attack(1, enemyId, weapon); // Demo: single player
-            ViewBag.Result = result;
-            return View("AttackResult");
+            var result = _adventureService.AttackEnemy(enemyName, (WeaponType)weaponType);
+            return View("AttackResult", result);
         }
     }
 }
