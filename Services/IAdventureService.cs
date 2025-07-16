@@ -4,6 +4,7 @@ namespace FuzzyNinjectWarrior.Services
 {
     public interface IAdventureService
     {
-        string Attack(int playerId, int enemyId, WeaponType weapon);
+        Player GetCurrentPlayer();
+        AttackResultViewModel AttackEnemy(string enemyName, WeaponType weaponType);
     }
 }
