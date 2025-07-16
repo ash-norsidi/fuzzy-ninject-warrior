@@ -1,14 +1,14 @@
-using FuzzyNinjectWarrior.Models;
+using NinjectWarriorAdventure.Models;
 using System.Collections.Generic;
 
-namespace FuzzyNinjectWarrior.Repositories
+namespace NinjectWarriorAdventure.Repositories
 {
     public interface IPlayerRepository
     {
-        Player GetPlayerById(int id);
-        IEnumerable<Enemy> GetAllEnemies();
-        Enemy GetEnemyById(int id);
+        Player GetPlayer(int id);
+        IEnumerable<Player> GetAllPlayers();
+        void AddPlayer(Player player);
         void UpdatePlayer(Player player);
-        void UpdateEnemy(Enemy enemy);
+        void DeletePlayer(int id);
     }
 }
