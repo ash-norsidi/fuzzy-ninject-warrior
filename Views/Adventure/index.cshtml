@@ -1,0 +1,24 @@
+@{
+    ViewBag.Title = "Fuzzy Ninject Warrior - Adventure";
+    var player = ViewBag.Player as FuzzyNinjectWarrior.Models.Player;
+    var enemies = ViewBag.Enemies as List<FuzzyNinjectWarrior.Models.Enemy>;
+}
+
+<h2>Welcome, @player.Name!</h2>
+<p>Health: @player.Health | Attack: @player.Attack</p>
+
+<h3>Choose an enemy and weapon to attack:</h3>
+<form action="/Adventure/Attack" method="post">
+    <select name="enemyId">
+        @foreach (var enemy in enemies)
+        {
+            <option value="@enemy.Id">@enemy.Name (Health: @enemy.Health, Attack: @enemy.Attack)</option>
+        }
+    </select>
+    <select name="weapon">
+        <option value="Sword">Sword</option>
+        <option value="Shuriken">Shuriken</option>
+        <option value="Bow">Bow</option>
+    </select>
+    <button type="submit">Attack!</button>
+</form>
