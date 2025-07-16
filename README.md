@@ -29,7 +29,7 @@ NinjectWarriorAdventure/
 ├── Models/
 │   ├── Player.cs
 │   ├── Enemy.cs
-│   ├── Weapon.cs
+│   ├── WeaponType.cs
 │   └── GameEvent.cs
 │
 ├── Services/
