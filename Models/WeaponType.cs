@@ -2,8 +2,9 @@ namespace FuzzyNinjectWarrior.Models
 {
     public enum WeaponType
     {
-        Sword,
-        Shuriken,
-        Bow
+        Sword = 1,
+        Axe = 2,
+        Bow = 3,
+        Magic = 4
     }
 }
