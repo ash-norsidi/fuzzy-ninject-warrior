@@ -1,6 +1,7 @@
 using FuzzyNinjectWarrior.Models;
 using FuzzyNinjectWarrior.Repositories;
-using FuzzyNinjectWarrior.ApiClients;
+using FuzzyNinjectWarrior.API;
+using FuzzyNinjectWarrior.ViewModels;
 using System;
 
 namespace FuzzyNinjectWarrior.Services
