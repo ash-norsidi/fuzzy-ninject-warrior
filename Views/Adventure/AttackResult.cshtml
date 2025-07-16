@@ -1,7 +1,25 @@
+@model FuzzyNinjectWarrior.Services.AttackResultViewModel
+
 @{
     ViewBag.Title = "Attack Result";
 }
 
-<h2>Attack Result</h2>
-<p>@ViewBag.Result</p>
-<a href="/Adventure/Index">Back to Adventure</a>
+<h2>Battle Result</h2>
+<p>@Model.ResultMessage</p>
+
+<h3>Player Status</h3>
+<ul>
+    <li>Name: @Model.Player.Name</li>
+    <li>Level: @Model.Player.Level</li>
+    <li>Health: @Model.Player.Health</li>
+    <li>Weapon: @Model.Player.Weapon</li>
+</ul>
+
+<h3>Enemy Status</h3>
+<ul>
+    <li>Name: @Model.Enemy.Name</li>
+    <li>Level: @Model.Enemy.Level</li>
+    <li>Health: @Model.Enemy.Health</li>
+</ul>
+
+<a href="@Url.Action("Index", "Adventure")">Back to Adventure</a>
