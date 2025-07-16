@@ -11,7 +11,7 @@ namespace FuzzyNinjectWarrior.Repositories
         public PlayerRepository()
         {
             var dbPath = HostingEnvironment.MapPath("~/App_Data/FuzzyNinjectWarrior.db");
-            _connectionString = $"Data Source={dbPath};Version=3;";
+            _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)); //$"Data Source={dbPath};Version=3;";
         }
 
         public Player GetPlayerById(int id)
