@@ -64,6 +64,16 @@ NinjectWarriorAdventure/
 
 ---
 
+## 🛠️ Technologies
+
+- ASP.NET MVC 5
+- Ninject (DI)
+- SQLite (via System.Data.SQLite)
+- C#
+- HTML/CSS
+
+---
+
 ## ⚙️ Setup Instructions
 
 ### Prerequisites
@@ -108,6 +118,15 @@ NinjectWarriorAdventure/
 
 ---
 
+## 🎮 Gameplay Mechanics
+
+- **Player attacks an enemy**: Select an enemy and weapon, then attack.
+- **Results displayed**: See if your attack was successful.
+- **Player/enemy data**: Loaded from and saved to the SQLite database.
+- **Event logging**: Game actions are logged to a stubbed API client.
+
+---
+
 ## 🗃️ Database Details
 
 - **SQLite** is used for simplicity and portability.
@@ -129,18 +148,12 @@ NinjectWarriorAdventure/
 
 ## ✨ Key Features
 
-- **Ninject-based Dependency Injection:** All controllers, services, repositories, and API clients are injected using Ninject, promoting loose coupling and testability.
-- **Gameplay Mechanics:** Classic turn-based combat system; player and enemy stats; weapon selection.
-- **Character Development:** Players gain experience and level up by defeating enemies.
-- **User Interface:** Simple, responsive web UI with clear feedback and action prompts.
-- **External API Integration:** Game events (like attacks and victories) are logged via a simulated API client.
-- **Extensible Architecture:** Easily add new features, weapons, enemies, or services due to the modular MVC and DI structure.
-- **Attack enemies**: Warriors can attack enemies with various weapons.
-- **Character management**: Players are loaded from the database.
-- **External logging**: Game events are sent to a mock API logger (can be extended).
-- **Simple UI**: Basic Razor views for interaction.
-- **SQLite Database**: Lightweight, easy to set up, and portable.
-- **Clear Code**: Well-commented with separation of concerns.
+- **Battle System:** Players attack enemies using different weapons.
+- **Character Development:** Player and enemy stats are stored in a SQLite database.
+- **Logging:** Game events are logged via an (example/stub) API client.
+- **MVC Pattern:** Clean separation of concerns.
+- **Ninject DI:** All services, repositories, and API clients are injected via Ninject.
+- **Simple UI:** Basic HTML/CSS views for gameplay.
 
 ---
 
